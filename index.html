@@ -26,10 +26,10 @@
           <div class="card main-info">
         
 
-            <h1 id="city"></h1>
-            <h1 id="time"></h1>
+            <h1 id="city" class="city"></h1>
+            <h1 id="time" class="time"></h1>
 
-            <h2 id="description"></h2>
+            <h2 id="description" class="description"></h2>
 
             <i class="fas fa-circle sun"></i>
           </div>
@@ -46,8 +46,10 @@
                 </h5>
                 <p class="card-text">
                   <small
-                    ><span id="max-temp"></span>°C
-                    <span id="minimum-temp"></span>°C
+                    >
+                      FEELS LIKE
+                      <span id="feels-like"></span>°C
+    
                     <br />
                   </small>
                 </p>
@@ -64,10 +66,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>FEELS LIKE</td>
-                      <td><span id="feels-like"></span>°C</td>
-                    </tr>
+                    
                     <tr>
                       <td>HUMIDITY</td>
                       <td><span id="humidity"></span>%</td>
