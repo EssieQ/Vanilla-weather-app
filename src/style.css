@@ -1,6 +1,6 @@
 .weather-app-wrapper {
   max-width: 750px;
-  margin: 0 auto;
+  margin: 15px auto;
 }
 
 .weather-app {
@@ -138,4 +138,12 @@ a:hover {
 
 .max-temp {
   font-weight: bolder;
+}
+
+.location {
+  float: inline-end;
+}
+
+.form-wrapper {
+  width: 720px;
 }
