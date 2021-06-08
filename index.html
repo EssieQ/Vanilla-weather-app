@@ -11,12 +11,164 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="src/style.css" />
-    <title>Weather App</title>
+    <title>Weather</title>
   </head>
   <body>
     <div class="container">
-      <h1>Hello World!</h1>
-      <a href="" class="btn btn-primary">Click me</a>
+      <div class="weather-app-wrapper">
+        <div class="weather-app">
+          <h1>Weather App</h1>
+
+          <h1 id="city"></h1>
+          <h1 id="time"></h1>
+
+          <h2 id="description"></h2>
+
+          <i class="fas fa-circle sun"></i>
+        </div>
+
+        <div class="card-group">
+          <div class="card weather">
+            <div class="card-body">
+              <h5>
+                <span class="current-temperature" id="temp">26</span
+                ><span class="units">
+                  <a href="#" id="celsius">°C</a> |
+                  <a href="#" id="fahrenheit">°F</a>
+                </span>
+              </h5>
+              <p class="card-text">
+                <small
+                  >△ <span id="maximum-temp"></span>°C ▽
+                  <span id="minimum-temp"></span>°C
+                  <br />
+                </small>
+              </p>
+            </div>
+          </div>
+          <div class="card weather">
+            <div class="card-body">
+              <h5 class="card-title">DETAILS</h5>
+              <p class="card-text"></p>
+              <table class="table table-borderless">
+                <thead>
+                  <tr>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>FEELS LIKE</td>
+                    <td><span id="feels-like"></span>°C</td>
+                  </tr>
+                  <tr>
+                    <td>HUMIDITY</td>
+                    <td><span id="humidity"></span>%</td>
+                  </tr>
+                  <tr>
+                    <td>WIND</td>
+                    <td><span id="wind"></span> KMPH</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm">
+            <div class="card days">
+              <div class="card-body">
+                <h6 class="card-title">MON 10</h6>
+                <p class="card-text temperature">△ 27°C</p>
+                <p class="card-text temperature">▽ 15°C</p>
+                <i class="fas fa-circle small-sun"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm">
+            <div class="card days">
+              <div class="card-body">
+                <h6 class="card-title">TUE 11</h6>
+                <p class="card-text temperature">△ 26°C</p>
+                <p class="card-text temperature">▽ 15°C</p>
+                <i class="fas fa-circle small-sun"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm">
+            <div class="card days">
+              <div class="card-body">
+                <h6 class="card-title">WED 12</h6>
+                <p class="card-text temperature">△ 27°C</p>
+                <p class="card-text temperature">▽ 15°C</p>
+                <i class="fas fa-bolt bolt"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm">
+            <div class="card days">
+              <div class="card-body">
+                <h6 class="card-title">THU 13</h6>
+                <p class="card-text temperature">△ 27°C</p>
+                <p class="card-text temperature">▽ 15°C</p>
+                <i class="fas fa-cloud cloud"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm">
+            <div class="card days">
+              <div class="card-body">
+                <h6 class="card-title">FRI 14</h6>
+                <p class="card-text temperature">△ 27°C</p>
+                <p class="card-text temperature">▽ 15°C</p>
+                <i class="fas fa-circle small-sun"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card main-info">
+          <form id="search-form">
+            <div class="row">
+              <div class="col-6">
+                <input
+                  type="text"
+                  placeholder="Search for a city"
+                  autocomplete="off"
+                  autofocus="on"
+                  id="search-type-form"
+                  class="form form-control shadow-sm"
+                />
+              </div>
+              <div class="col-3">
+                <input
+                  type="submit"
+                  value="search"
+                  class="form-control btn btn-light"
+                />
+              </div>
+              <div class="col-3">
+                <button
+                  type="button"
+                  class="btn btn-light"
+                  id="current-location-button"
+                >
+                  Current location
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <small
+          ><a
+            href="https://github.com/EssieQ/Vanilla-weather-app"
+            target="_blank"
+            >Open source code</a
+          >
+          by Esther Cauven
+        </small>
+      </div>
     </div>
     <script src="src/app.js"></script>
   </body>
