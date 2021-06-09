@@ -152,3 +152,9 @@ a:hover {
 .update {
   font-size: 13px;
 }
+
+img {
+  max-width: 100px;
+  display: block;
+  margin: 0 auto;
+}
