@@ -95,7 +95,7 @@ h2 {
 }
 
 h6 {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 900px;
 }
 
@@ -138,6 +138,7 @@ a:hover {
 
 .max-temp {
   font-weight: bolder;
+  margin-top: 10px;
 }
 
 .location {
