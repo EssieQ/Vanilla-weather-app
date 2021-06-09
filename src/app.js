@@ -40,15 +40,6 @@ function showWeather(response) {
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
-
-  let maximumTemp = document.querySelector("#maximum-temp");
-  maximumTemp.innerHTML = Math.round(response.data.main.temp_max);
-
-  document.querySelector("#minimum-temp").innerHTML = Math.round(
-    response.data.main.temp_min
-  );
-
-  console.log(response.data);
 }
 
 function searchCity(city) {
