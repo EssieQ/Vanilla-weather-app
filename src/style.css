@@ -110,15 +110,6 @@ h6 {
   padding: 0 10px 0 1px;
 }
 
-a {
-  text-decoration: none;
-  color: #f14668;
-}
-
-a:hover {
-  color: #ffb4b4;
-}
-
 .btn {
   display: inline-block;
   background-color: #ffdcdc;
@@ -157,4 +148,23 @@ img {
   max-width: 100px;
   display: block;
   margin: 0 auto;
+}
+
+.active {
+  color: #f14668;
+  text-decoration: none;
+}
+
+.active:hover {
+  text-decoration: none;
+  color: #ffb4b4;
+}
+
+a {
+  color: #ffb4b4;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #f14668;
 }
