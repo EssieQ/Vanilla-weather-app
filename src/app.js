@@ -22,6 +22,35 @@ function formatDate(date) {
   return `${day.toUpperCase()} ${hours}:${minutes}`;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Thu", "Fri", "Sat", "Sun"];
+
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      ` 
+             <div class="col-sm">
+              <div class="card days">
+                <div class="card-body">
+                  <h6 class="card-title"><div class="weather-forecast-date">${day}</div></h6>
+                  <i class="fas fa-circle small-sun"></i>
+                   <div class="weather-forecast-temperatures"><span class="card-text temperature max-temp">27°C</span>
+                  <span class="card-text temperature">15°C</span></div>
+                </div>
+              </div>
+            </div>
+            
+            `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function showWeather(response) {
   let temperatureElement = document.querySelector("#temp");
   let descriptionElement = document.querySelector("#description");
@@ -100,6 +129,7 @@ function displayCelsiusTemperature(event) {
 }
 
 searchCity("Amsterdam");
+displayForecast();
 
 let celsiusTemperature = null;
 

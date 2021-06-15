@@ -168,3 +168,7 @@ a {
 a:hover {
   color: #f14668;
 }
+
+.weather-forecast-date {
+  margin-bottom: 10px;
+}
