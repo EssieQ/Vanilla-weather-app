@@ -22,7 +22,8 @@ function formatDate(date) {
   return `${day.toUpperCase()} ${hours}:${minutes}`;
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
@@ -49,6 +50,15 @@ function displayForecast() {
   forecastHTML = forecastHTML + `</div>`;
 
   forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+
+  let apiKey = "bd915d97f51d3c0651893d85326bd29d";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function showWeather(response) {
@@ -78,6 +88,8 @@ function showWeather(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+
+  getForecast(response.data.coord);
 }
 
 function searchCity(city) {
@@ -129,7 +141,6 @@ function displayCelsiusTemperature(event) {
 }
 
 searchCity("Amsterdam");
-displayForecast();
 
 let celsiusTemperature = null;
 
