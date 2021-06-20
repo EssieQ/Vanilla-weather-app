@@ -22,29 +22,45 @@ function formatDate(date) {
   return `${day.toUpperCase()} ${hours}:${minutes}`;
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
-  let days = ["Thu", "Fri", "Sat", "Sun"];
-
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      ` 
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        ` 
              <div class="col-sm">
               <div class="card days">
                 <div class="card-body">
-                  <h6 class="card-title"><div class="weather-forecast-date">${day}</div></h6>
-                  <i class="fas fa-circle small-sun"></i>
-                   <div class="weather-forecast-temperatures"><span class="card-text temperature max-temp">27°C</span>
-                  <span class="card-text temperature">15°C</span></div>
+                  <h6 class="card-title"><div class="weather-forecast-date">${formatDay(
+                    forecastDay.dt
+                  )}</div></h6>
+                  <img src="http://openweathermap.org/img/wn/${
+                    forecastDay.weather[0].icon
+                  }@2x.png" alt="" width="42" />
+                   <div class="weather-forecast-temperatures"><span class="card-text temperature max-temp">${Math.round(
+                     forecastDay.temp.max
+                   )}°C</span>
+                  <span class="card-text temperature">${Math.round(
+                    forecastDay.temp.min
+                  )}°C</span></div>
                 </div>
               </div>
             </div>
             
             `;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
