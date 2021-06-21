@@ -150,16 +150,6 @@ img {
   margin: 0 auto;
 }
 
-.active {
-  color: #f14668;
-  text-decoration: none;
-}
-
-.active:hover {
-  text-decoration: none;
-  color: #ffb4b4;
-}
-
 a {
   color: #ffb4b4;
   text-decoration: none;
