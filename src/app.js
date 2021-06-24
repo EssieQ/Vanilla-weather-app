@@ -78,7 +78,7 @@ function getForecast(coordinates) {
 }
 
 function showWeather(response) {
-  console.log(response.data.main);
+  console.log(response);
   let temperatureElement = document.querySelector("#temp");
   let descriptionElement = document.querySelector("#description");
   let cityElement = document.querySelector("#city");
@@ -86,9 +86,11 @@ function showWeather(response) {
   let feelElement = document.querySelector("#feels-like");
   let windElement = document.querySelector("#wind");
   let iconElement = document.querySelector("#icon");
+  let background = document.querySelector("#weather-app");
+
+  let iconElementAttribute = response.data.weather[0].icon;
 
   celsiusTemperature = response.data.main.temp;
-
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
   descriptionElement.innerHTML =
     response.data.weather[0].description.toUpperCase();
@@ -103,10 +105,16 @@ function showWeather(response) {
 
   iconElement.setAttribute(
     "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    `http://openweathermap.org/img/wn/${iconElementAttribute}@2x.png`
   );
 
   getForecast(response.data.coord);
+
+  if (iconElementAttribute === "02d") {
+    background.classList.add("clouds");
+  } else if (iconElementAttribute === "11d") {
+    background.classList.ass("thunderstorm");
+  }
 }
 
 function searchCity(city) {
