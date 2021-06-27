@@ -163,18 +163,39 @@ a:hover {
   margin-bottom: 10px;
 }
 
-.clouds {
-  background: linear-gradient(
-    180.3deg,
-    rgb(221, 221, 221) 5.5%,
-    rgb(110, 136, 161) 90.2%
+.clear-sky-day {
+  background: radial-gradient(
+    circle at 10% 20%,
+    rgb(255, 200, 124) 0%,
+    rgb(252, 251, 121) 90%
   );
 }
 
-.thunderstorm {
+.clear-sky-night {
   background: linear-gradient(
-    76.8deg,
-    rgb(121, 45, 129) 3.6%,
-    rgb(36, 31, 98) 90.4%
+    112.1deg,
+    rgb(32, 38, 57) 11.4%,
+    rgb(63, 76, 119) 70.2%
   );
+}
+
+.few-clouds-day {
+  background: radial-gradient(
+    circle at -3.7% -5%,
+    rgb(113, 213, 225) 0.3%,
+    rgb(73, 146, 226) 90.5%
+  );
+}
+
+.few-clouds-night {
+  background: linear-gradient(
+    114.9deg,
+    rgb(34, 34, 34) 8.3%,
+    rgb(0, 40, 60) 41.6%,
+    rgb(0, 143, 213) 93.4%
+  );
+}
+
+.broken-clouds-day {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 }
